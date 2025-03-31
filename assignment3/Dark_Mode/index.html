@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Webpage Styling</title>
+    <style>
+        :root {
+            --primary-bg: white;
+            --primary-text: #000000;
+            --secondary-bg: #121212;
+            --secondary-text: green;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--primary-bg);
+            color: var(--primary-text);
+            transition: background 0.5s, color 0.5s;
+            scroll-behavior: smooth;
+        }
+
+        .dark-mode {
+            background: var(--secondary-bg);
+            color: var(--secondary-text);
+        }
+
+        nav {
+            background: #333;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664?w=1600') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            width: 300px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Button Style */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            z-index: 1000;
+
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #f4a261;
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Our Website</h1>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <h2>Typography</h2>
+            <p>Experiment with different fonts and styles.</p>
+        </div>
+        <div class="card">
+            <h2>Animations</h2>
+            <p>CSS transitions and keyframe animations.</p>
+        </div>
+        <div class="card">
+            <h2>Responsive Design</h2>
+            <p>Adapting layouts for all screen sizes.</p>
+        </div>
+        <div class="card">
+            <h2>Flexbox & Grid</h2>
+            <p>Using modern layout techniques.</p>
+        </div>
+        <div class="card">
+            <h2>Dark Mode</h2>
+            <p>Toggle between light and dark themes.</p>
+        </div>
+        <div class="card">
+            <h2>Interactive Elements</h2>
+            <p>Buttons, hover effects, and dynamic styles.</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Styled Webpage | Follow us on social media</p>
+    </footer>
+</body>
+
+</html>
